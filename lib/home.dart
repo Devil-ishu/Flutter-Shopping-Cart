@@ -4,6 +4,7 @@ import 'package:shopping_cart/pages/HomePage.dart';
 import 'package:shopping_cart/pages/ProfilePage.dart';
 import 'package:shopping_cart/pages/ProfilePage1.dart';
 import 'package:shopping_cart/pages/SearchPage.dart';
+import 'package:shopping_cart/pages/InviteFriendsPage.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -33,10 +34,12 @@ class _HomeState extends State<Home> {
           BottomNavigationBarItem(
               icon: Icon(Icons.shopping_cart), title: Text("Cart")),
           BottomNavigationBarItem(
+              icon: Icon(Icons.account_balance_wallet), title: Text("Wallet")),
+          BottomNavigationBarItem(
               icon: Icon(Icons.person), title: Text("Account")),
         ],
         currentIndex: selectedPosition,
-        type: BottomNavigationBarType.fixed,
+        type: BottomNavigationBarType.shifting,
         backgroundColor: Colors.grey.shade100,
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.black,
@@ -56,6 +59,7 @@ class _HomeState extends State<Home> {
     listBottomWidget.add(HomePage());
     listBottomWidget.add(SearchPage());
     listBottomWidget.add(CartPage());
-    listBottomWidget.add(ProfilePage1());
+    listBottomWidget.add(InviteFriendsPage());
+    listBottomWidget.add(ProfilePage());
   }
 }

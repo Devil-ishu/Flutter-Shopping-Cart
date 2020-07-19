@@ -39,9 +39,9 @@ class _MyAppState extends State<MyApp> {
           color: Colors.white,
           child: Center(
             child: Image(
-              image: AssetImage("images/ic_logo.png"),
-              height: 140,
-              width: 140,
+              image: AssetImage("images/icg.png"),
+              height: 250,
+              width: 250,
             ),
           )),
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_cart/model/list_profile_section.dart';
 import 'package:shopping_cart/utils/CustomTextStyle.dart';
-
+import 'ProfilePage.dart';
 import 'AboutUsPage.dart';
 import 'EditProfilePage.dart';
 import 'InviteFriendsPage.dart';
@@ -23,7 +23,7 @@ class _ProfilePage1State extends State<ProfilePage1> {
   }
 
   void createListItem() {
-    listSection.add(createSection("Notifications", "images/ic_notification.png",
+    listSection.add(createSection("Facebook", "images/ic_notification.png",
         Colors.blue.shade800, NotificationPage()));
     listSection.add(createSection(
         "Payment Method", "images/ic_payment.png", Colors.teal.shade800, null));
@@ -34,6 +34,11 @@ class _ProfilePage1State extends State<ProfilePage1> {
         InviteFriendsPage()));
     listSection.add(createSection("About Us", "images/ic_about_us.png",
         Colors.black.withOpacity(0.8), AboutPage()));
+    listSection.add(createSection(
+        "View my public profile",
+        "images/ic_about_us.png",
+        Colors.black.withOpacity(0.8),
+        ProfilePage()));
     listSection.add(createSection(
         "Logout", "images/ic_logout.png", Colors.red.withOpacity(0.7), null));
   }
@@ -135,7 +140,7 @@ class _ProfilePage1State extends State<ProfilePage1> {
                                           MainAxisAlignment.spaceBetween,
                                       children: <Widget>[
                                         IconButton(
-                                          icon: Icon(Icons.settings),
+                                          icon: Icon(Icons.share),
                                           iconSize: 24,
                                           color: Colors.black,
                                           onPressed: () {},
@@ -181,7 +186,20 @@ class _ProfilePage1State extends State<ProfilePage1> {
                                     width: double.infinity,
                                     color: Colors.grey.shade200,
                                   ),
-                                  buildListView()
+                                  buildListView(),
+                                  /* Column(
+                                    children: <Widget>[
+                                      FlatButton(
+                                        onPressed: () {},
+                                        child: Image(
+                                          image: AssetImage(
+                                              "images/social/facebook-icon-social-media-icon-png-and-vector-facebook-png-640_640.png"),
+                                          width: 30,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ],
+                                  ),*/
                                 ],
                               ),
                             ),

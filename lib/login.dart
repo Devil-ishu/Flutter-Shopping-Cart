@@ -25,11 +25,11 @@ class _LoginState extends State<Login> {
             children: <Widget>[
               Expanded(
                 child: Image(
-                    image: AssetImage("images/ic_logo.png"),
-                    color: Colors.blue,
+                    image: AssetImage("images/full_logo.png"),
+                    //color: Colors.blue,
                     height: 140,
                     alignment: Alignment.center,
-                    width: 200),
+                    width: 300),
                 flex: 40,
               ),
               Expanded(
@@ -41,7 +41,7 @@ class _LoginState extends State<Login> {
                         decoration: InputDecoration(
                             contentPadding: EdgeInsets.fromLTRB(16, 16, 16, 12),
                             border: CustomBorder.enabledBorder,
-                            labelText: "Mobile No. or Email",
+                            labelText: "Mobile / Email / SSID",
                             hasFloatingPlaceholder: true,
                             focusedBorder: CustomBorder.focusBorder,
                             errorBorder: CustomBorder.errorBorder,
@@ -147,6 +147,49 @@ class _LoginState extends State<Login> {
                                   BorderRadius.all(Radius.circular(4))),
                         ),
                       ),
+                      Utils.getSizedBox(height: 1),
+                      Row(
+                        children: <Widget>[
+                          Expanded(
+                            child: Container(
+                              color: Colors.grey.shade200,
+                              margin: EdgeInsets.only(right: 16),
+                              height: 1,
+                            ),
+                            flex: 40,
+                          ),
+                          Text(
+                            "Or",
+                            style: CustomTextStyle.textFormFieldMedium
+                                .copyWith(fontSize: 14),
+                          ),
+                          Expanded(
+                            child: Container(
+                              color: Colors.grey.shade200,
+                              margin: EdgeInsets.only(left: 16),
+                              height: 1,
+                            ),
+                            flex: 40,
+                          )
+                        ],
+                      ),
+                      Utils.getSizedBox(height: 1),
+                      Container(
+                        width: double.infinity,
+                        child: RaisedButton(
+                          onPressed: () {},
+                          child: Text(
+                            "CONTINUE WITH GOOGLE",
+                            style: CustomTextStyle.textFormFieldMedium
+                                .copyWith(color: Colors.white, fontSize: 14),
+                          ),
+                          color: CustomColors.COLOR_BLUE,
+                          textColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(4))),
+                        ),
+                      ),
                       Utils.getSizedBox(height: 10),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -169,7 +212,23 @@ class _LoginState extends State<Login> {
                             },
                           ),
                         ],
-                      )
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          GestureDetector(
+                            child: Text(
+                              "Maybe Later..",
+                              style: CustomTextStyle.textFormFieldBold
+                                  .copyWith(fontSize: 14, color: Colors.blue),
+                            ),
+                            onTap: () {
+                              Navigator.of(context).push(new MaterialPageRoute(
+                                  builder: (context) => Home()));
+                            },
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),

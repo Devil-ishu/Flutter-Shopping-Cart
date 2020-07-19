@@ -18,20 +18,39 @@ class _SignUpState extends State<SignUp> {
         width: double.infinity,
         child: Column(
           children: <Widget>[
+            Text("Sign up"),
+            Utils.getSizedBox(height: 80),
             Expanded(
               child: Image(
-                  image: AssetImage("images/ic_logo.png"),
-                  color: Colors.blue,
-                  height: 140,
+                  image: AssetImage("images/ic_user_profile.png"),
+                  //color: Colors.blue,
+                  height: 400,
                   alignment: Alignment.center,
                   width: 200),
-              flex: 50,
+              flex: 20,
             ),
             Expanded(
               child: Container(
                 margin: EdgeInsets.all(16),
                 child: Column(
                   children: <Widget>[
+                    /*TextFormField(
+                        decoration: InputDecoration(
+                            contentPadding: EdgeInsets.fromLTRB(16, 16, 16, 12),
+                            border: CustomBorder.enabledBorder,
+                            labelText: "SSID",
+                            hasFloatingPlaceholder: true,
+                            focusedBorder: CustomBorder.focusBorder,
+                            errorBorder: CustomBorder.errorBorder,
+                            enabledBorder: CustomBorder.enabledBorder,
+                            labelStyle: CustomTextStyle.textFormFieldRegular
+                                .copyWith(
+                                    fontSize:
+                                        MediaQuery.of(context).textScaleFactor *
+                                            16,
+                                    color: Colors.black)),
+                        keyboardType: TextInputType.text),
+                    Utils.getSizedBox(height: 10),*/
                     TextFormField(
                         decoration: InputDecoration(
                             contentPadding: EdgeInsets.fromLTRB(16, 16, 16, 12),
@@ -48,7 +67,7 @@ class _SignUpState extends State<SignUp> {
                                             16,
                                     color: Colors.black)),
                         keyboardType: TextInputType.text),
-                    Utils.getSizedBox(height: 20),
+                    Utils.getSizedBox(height: 10),
                     TextFormField(
                         decoration: InputDecoration(
                             contentPadding: EdgeInsets.fromLTRB(16, 16, 16, 12),
@@ -64,8 +83,8 @@ class _SignUpState extends State<SignUp> {
                                         MediaQuery.of(context).textScaleFactor *
                                             16,
                                     color: Colors.black)),
-                        keyboardType: TextInputType.number),
-                    Utils.getSizedBox(height: 20),
+                        keyboardType: TextInputType.phone),
+                    Utils.getSizedBox(height: 10),
                     TextFormField(
                         decoration: InputDecoration(
                             contentPadding: EdgeInsets.fromLTRB(16, 16, 16, 12),
@@ -82,7 +101,13 @@ class _SignUpState extends State<SignUp> {
                                             16,
                                     color: Colors.black)),
                         keyboardType: TextInputType.emailAddress),
-                    Utils.getSizedBox(height: 20),
+                    Utils.getSizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Utils.getSizedBox(width: 4),
+                      ],
+                    ),
                     TextFormField(
                       decoration: InputDecoration(
                           contentPadding: EdgeInsets.fromLTRB(16, 16, 16, 12),
@@ -116,6 +141,33 @@ class _SignUpState extends State<SignUp> {
                             borderRadius: BorderRadius.all(Radius.circular(4))),
                       ),
                     ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          "By signing up you are agreeing with Onesec Technology ",
+                          style: CustomTextStyle.textFormFieldMedium
+                              .copyWith(fontSize: 14),
+                        ),
+                        Utils.getSizedBox(width: 4),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        GestureDetector(
+                          child: Text(
+                            "Term & Condition  and Privacy policy",
+                            style: CustomTextStyle.textFormFieldBold
+                                .copyWith(fontSize: 14, color: Colors.blue),
+                          ),
+                          onTap: () {
+                            Navigator.of(context).push(new MaterialPageRoute(
+                                builder: (context) => SignUp()));
+                          },
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
@@ -126,4 +178,6 @@ class _SignUpState extends State<SignUp> {
       ),
     );
   }
+
+  void setSelectedRadio(val) {}
 }

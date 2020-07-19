@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_cart/pages/CartPage.dart';
+import 'package:shopping_cart/pages/SearchPage.dart';
 import 'package:shopping_cart/utils/CustomBorder.dart';
 import 'package:shopping_cart/utils/CustomColors.dart';
 import 'package:shopping_cart/utils/CustomTextStyle.dart';
 import 'package:shopping_cart/utils/CustomUtils.dart';
-
+import 'package:shopping_cart/pages/tab_drawer.dart';
 import 'ProductDetailsPage.dart';
 import 'SeeAllProductPage.dart';
 
@@ -26,9 +28,10 @@ class _HomePageState extends State<HomePage> {
   }
 
   void sliderImage() {
-    listImage.add("images/slider_img.webp");
-    listImage.add("images/slider_img.webp");
-    listImage.add("images/slider_img.webp");
+    listImage.add("images/d2.jpg");
+    // listImage
+    //.add("images/254-2544418_watch-png-clipart-watch-images-hd-png.png");
+    listImage.add("images/bee_banner_scilly_400x.webp");
   }
 
   void shoesImage() {
@@ -45,7 +48,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
+      drawer: Drawer(child: DrawerTab()),
       backgroundColor: Colors.grey.shade100,
+      resizeToAvoidBottomPadding: false,
       body: Builder(
         builder: (context) {
           return SingleChildScrollView(
@@ -54,44 +59,95 @@ class _HomePageState extends State<HomePage> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      color: CustomColors.COLOR_GREEN,
+                      color: CustomColors.COLOR_BLUE,
                       height: height / 4,
                     ),
                     /*Search Section*/
                     Container(
+                      alignment: Alignment.topCenter,
                       margin:
-                          const EdgeInsets.only(top: 48, right: 24, left: 24),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          fillColor: Colors.white,
-                          hintText: "Search",
-                          enabledBorder: CustomBorder.enabledBorder.copyWith(
-                              borderSide: BorderSide(color: Colors.white),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(24))),
-                          contentPadding: EdgeInsets.only(
-                              top: 16, left: 12, right: 12, bottom: 8),
-                          border: CustomBorder.enabledBorder.copyWith(
-                              borderSide: BorderSide(color: Colors.white),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(24))),
-                          enabled: false,
-                          filled: true,
+                          const EdgeInsets.only(top: 38, right: 10, left: 10),
+                      child: Row(
+                        children: <Widget>[
+                          IconButton(
+                            icon: Icon(Icons.menu),
+                            iconSize: 24,
+                            color: Colors.white,
+                            onPressed: () {
+                              /* Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => DrawerTab()));*/
+                            },
+                          ),
+                          Utils.getSizedBox(width: 26),
+                          Image(
+                              image: AssetImage("images/icg.png"),
+                              color: Colors.white,
+                              height: 50,
+                              alignment: Alignment.topCenter,
+                              width: 200),
+                          Utils.getSizedBox(width: 10),
+                          FlatButton(
+                              child: Image(
+                                  image: AssetImage("images/banner.png"),
+                                  color: Colors.white,
+                                  height: 35,
+                                  alignment: Alignment.topRight,
+                                  width: 35),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    new MaterialPageRoute(
+                                        builder: (context) => CartPage()));
+                              } //children: <Widget>[
+                              ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin:
+                          const EdgeInsets.only(top: 100, right: 10, left: 10),
+                      child: FlatButton(
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            fillColor: Colors.white,
+                            hintText: "Search",
+                            enabledBorder: CustomBorder.enabledBorder.copyWith(
+                                borderSide: BorderSide(color: Colors.white),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(24))),
+                            contentPadding: EdgeInsets.only(
+                                top: 16, left: 12, right: 12, bottom: 8),
+                            border: CustomBorder.enabledBorder.copyWith(
+                                borderSide: BorderSide(color: Colors.white),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(24))),
+                            enabled: false,
+                            filled: true,
+                          ),
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                new MaterialPageRoute(
+                                    builder: (context) => SearchPage()));
+                          },
                         ),
                       ),
                     ),
+
                     /*Slider Section*/
                     Container(
-                        height: (height / 4) + 75,
+                        height: (height / 4) + 150,
                         alignment: Alignment.bottomCenter,
                         child: Container(
-                          height: height / 5,
+                          height: 200,
                           child: PageView.builder(
                             itemBuilder: (context, position) {
                               return createSlider(listImage[position]);
                             },
                             controller: PageController(viewportFraction: .8),
-                            itemCount: listImage.length,
+                            itemCount: 2,
                             onPageChanged: (position) {
                               /*setState(() {
                               selectedSliderPosition = position;
