@@ -1,3 +1,4 @@
+import 'package:shopping_cart/pages/SecretWallet.dart';
 import 'package:shopping_cart/utils/CustomColors.dart';
 import 'package:shopping_cart/utils/CustomTextStyle.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,7 @@ import 'package:shopping_cart/pages/HomePage.dart';
 import 'package:shopping_cart/pages/ProfilePage.dart';
 import 'package:shopping_cart/pages/ProfilePage1.dart';
 import 'package:shopping_cart/pages/SearchPage.dart';
+import 'package:shopping_cart/pages/SecretWallet.dart';
 import 'InviteFriendsPage.dart';
 import 'AboutUsPage.dart';
 
@@ -49,7 +51,7 @@ class DrawerTab extends StatelessWidget {
                       Navigator.push(
                           context,
                           new MaterialPageRoute(
-                              builder: (context) => ProfilePage1()));
+                              builder: (context) => SecretWallet()));
                     }),
                 FlatButton(
                     child: Text("My Order"),

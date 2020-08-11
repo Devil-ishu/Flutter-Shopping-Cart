@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "518855925008",
+    "firebase_url": "https://secret-shop-1610.firebaseio.com",
+    "project_id": "secret-shop-1610",
+    "storage_bucket": "secret-shop-1610.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:518855925008:android:4024f67b81e37f945ed995",
+        "android_client_info": {
+          "package_name": "com.secret_shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "518855925008-7npuc26l0t5ontue6oqmgka1jb7fe6hn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDA-VtqOr80dMgkPaFSR8mN6_tKQj3ybPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "518855925008-7npuc26l0t5ontue6oqmgka1jb7fe6hn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
